@@ -4,6 +4,16 @@ let buttonColours = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
 let userClickedPattern = [];
 
+if ($(window).width() <= 1100) {
+  $(document).click(function startGame() {
+    if (!started) {
+      $("#level-title").text("Level " + lvlNum);
+      nextSequence();
+      started = true;
+    }
+  });
+}
+
 $(document).keypress(function startGame() {
   if (!started) {
     $("#level-title").text("Level " + lvlNum);
